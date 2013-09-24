@@ -9,5 +9,6 @@
     <string name="stopRecording">Stop</string>
     <string name="storeTag">Store GPS Data</string>
     <string name="tag">Tag</string>
+    <string name="title">record motions</string>
 
 </resources>
