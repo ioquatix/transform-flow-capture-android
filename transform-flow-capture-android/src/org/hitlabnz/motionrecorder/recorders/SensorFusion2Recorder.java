@@ -12,7 +12,6 @@ import org.hitlabnz.motionrecorder.events.MotionEventListener;
 
 import android.content.Context;
 import android.hardware.SensorEvent;
-import android.util.Log;
 
 /**
  * This recorder fuses two sensors and outputs a fused result
@@ -192,7 +191,7 @@ public class SensorFusion2Recorder extends SensorRecorder implements MotionEvent
                 gyroscopeRotationVelocity = Math.sqrt(axisX * axisX + axisY * axisY + axisZ * axisZ);
 
                 // Output the gyroscope velocity that will be used as a weighting factor in Sensor Fusion scenario 2
-                Log.d("RotationVelocity", String.format("Gyroscope Velocity %.2f", gyroscopeRotationVelocity));
+                // Log.d("RotationVelocity", String.format("Gyroscope Velocity %.2f", gyroscopeRotationVelocity));
 
                 // Normalize the rotation vector if it's big enough to get the axis
                 if (gyroscopeRotationVelocity > EPSILON) {

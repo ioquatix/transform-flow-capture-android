@@ -151,6 +151,8 @@ public class GPSRecorder extends SensorRecorder implements GooglePlayServicesCli
 
 	@Override
 	public void onLocationChanged(Location location) {
+
+		//  location.
 		if (!recording)
 			return;
 
