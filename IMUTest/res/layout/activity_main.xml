@@ -1,0 +1,151 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- Application Name -->
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="30sp" />
+
+    <!-- Accelerometer Text -->
+
+    <TextView
+        android:id="@+id/a_xval"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:text="holder"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/a_yval"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/a_xval"
+        android:text="holder"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/a_zval"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/a_yval"
+        android:text="holder"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/a_rate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/a_zval"
+        android:text="holder"
+        android:textSize="20sp" />
+    <!-- Gyroscope Text -->
+
+    <TextView
+        android:id="@+id/g_xval"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/a_rate"
+        android:text="holder"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/g_yval"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/g_xval"
+        android:text="holder"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/g_zval"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/g_yval"
+        android:text="holder"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/g_rate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/g_zval"
+        android:text="holder"
+        android:textSize="20sp" />
+
+    <!-- Magnetic Text -->
+
+    <TextView
+        android:id="@+id/m_xval"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/g_rate"
+        android:text="holder"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/m_yval"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/m_xval"
+        android:text="holder"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/m_zval"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/m_yval"
+        android:text="holder"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/m_rate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/m_zval"
+        android:text="holder"
+        android:textSize="20sp" />
+    
+    <!-- Quarternion Text -->
+    
+        <TextView
+        android:id="@+id/quart0"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/m_rate"
+        android:text="holder"
+        android:textSize="20sp" />
+        
+            <TextView
+        android:id="@+id/quart1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/quart0"
+        android:text="holder"
+        android:textSize="20sp" />
+            
+                <TextView
+        android:id="@+id/quart2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/quart1"
+        android:text="holder"
+        android:textSize="20sp" />
+                
+                    <TextView
+        android:id="@+id/quart3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/quart2"
+        android:text="holder"
+        android:textSize="20sp" />
+
+</RelativeLayout>
