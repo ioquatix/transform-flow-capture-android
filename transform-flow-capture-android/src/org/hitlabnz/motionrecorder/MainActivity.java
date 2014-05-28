@@ -174,8 +174,8 @@ public class MainActivity extends Activity implements MotionEventListener {
 	public void onStartRecordingButtonClick(View view) {
 		eventIndex = 0;
 		pictureIndex = 0;
-		//startRecordingToFile();
-		startRecording();
+		startRecordingToFile();
+		//startRecording();
 	}
 
 	/**
