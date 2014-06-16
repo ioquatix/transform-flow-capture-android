@@ -110,18 +110,18 @@ public class MainActivity extends Activity implements MotionEventListener {
 
 		recorders = new ArrayList<SensorRecorder>();
 		recorders.add(new GPSRecorder());
-		recorders.add(new AccelerometerRecorder());
+//		recorders.add(new AccelerometerRecorder());
 		recorders.add(new GyroscopeRecorder());
 		recorders.add(new CompassRecorder());
-		recorders.add(new LinearAccelerometerRecorder());
+//		recorders.add(new LinearAccelerometerRecorder());
 		recorders.add(new OrientationRecorder());
-		recorders.add(new GravityRecorder());
-		recorders.add(new RotationVectorRecorder());
+//		recorders.add(new GravityRecorder());
+//		recorders.add(new RotationVectorRecorder());
 		recorders.add(new PictureRecorder());
 		sensorFusion1Recorder = new SensorFusion1Recorder();
 		sensorFusion2Recorder = new SensorFusion2Recorder();
-		recorders.add(sensorFusion1Recorder);
-		recorders.add(sensorFusion2Recorder);
+//		recorders.add(sensorFusion1Recorder);
+//		recorders.add(sensorFusion2Recorder);
 
 	}
 
@@ -231,7 +231,7 @@ public class MainActivity extends Activity implements MotionEventListener {
 		directory.mkdirs();
 
 		for (SensorRecorder recorder : recorders) {
-			//recorder.startRecording(startDate, directory);
+//			recorder.startRecording(startDate, directory); // This is uncommented to record data.
 			recorder.startRecording(startDate, this);
 		}
 	}
