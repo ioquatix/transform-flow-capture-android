@@ -49,12 +49,12 @@ public class GPSRecorder extends SensorRecorder implements GooglePlayServicesCli
 	/**
 	 * Update frequency in milliseconds
 	 */
-	private static final long UPDATE_INTERVAL = 5000;
+	private static final long UPDATE_INTERVAL = 0;
 
 	/**
 	 * A fast frequency ceiling in milliseconds
 	 */
-	private static final long FASTEST_INTERVAL = 1000;
+	private static final long FASTEST_INTERVAL = 0;
 
 	/**
 	 * Application-context
@@ -159,8 +159,9 @@ public class GPSRecorder extends SensorRecorder implements GooglePlayServicesCli
 		if (recordingToFile) {
 			CharSequence currentTimeStamp = formatter.format(new Date((new Date().getTime() - recordingStartDate
 					.getTime())));
+			// GNSS output file: Lat, Lon, Alt, sigma, UTM time
 			String msg = currentTimeStamp + Double.toString(location.getLatitude()) + ","
-					+ Double.toString(location.getLongitude()) + "\n";
+					+ Double.toString(location.getLongitude()) + "," + Double.toString(location.getAltitude()) + "," + Double.toString(location.getAccuracy()) + "," + Double.toString(location.getTime()) + "\n";
 
 			// Write new location to SD-card
 			try {
