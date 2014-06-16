@@ -37,11 +37,13 @@ import android.content.Context;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.SurfaceHolder;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -84,7 +86,26 @@ public class MainActivity extends Activity implements MotionEventListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+//	    StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+//        .detectAll()
+//        .detectDiskReads()
+//        .detectDiskWrites()
+//        .detectNetwork() 
+//         // alternatively .detectAll() for all detectable problems
+//        .penaltyLog()
+//        .penaltyDeath()
+//        .build());
+//    StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+//         .detectLeakedSqlLiteObjects()
+//         .detectLeakedClosableObjects()
+//        // alternatively .detectAll() for all detectable problems
+//        .penaltyLog()
+//        .penaltyDeath()
+//        .build());
 
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+		
 		OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_6, this, new OpenCVLoaderCallback(this));
 
 		recorders = new ArrayList<SensorRecorder>();
