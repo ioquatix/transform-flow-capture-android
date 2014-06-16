@@ -39,6 +39,7 @@ public class PictureRecorder extends SensorRecorder implements OpenCVWorker.Resu
 	 * @see org.hitlabnz.motionrecorder.recorders.SensorRecorder#initialize(android.content.Context) */
 	@Override
 	public void initialize(Context context) {
+		Log.e(TAG, "Picture Recorder Initilizes");
 		super.initialize(context);
 	}
 
@@ -85,6 +86,8 @@ public class PictureRecorder extends SensorRecorder implements OpenCVWorker.Resu
 
 	@Override
 	public void onResultMatrixReady(Bitmap resultBitmap) {
+		Log.e(TAG,"Picture Matrix Ready");
+		
 		if (!recording)
 			return;
 

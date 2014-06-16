@@ -13,6 +13,7 @@ import org.opencv.highgui.Highgui;
 import org.opencv.highgui.VideoCapture;
 
 import android.graphics.Bitmap;
+import android.util.Log;
 
 public class OpenCVWorker implements Runnable {
     public static final String TAG = "OpenCVWorker";
@@ -73,6 +74,8 @@ public class OpenCVWorker implements Runnable {
         // We always need to do this as each device support different preview
         // sizes for their cameras
         List<Size> previewSizes = mCamera.getSupportedPreviewSizes();
+        
+        System.out.println(previewSizes);
         double largestPreviewSize = 1280 * 720; // We should be smaller than
                                                 // this...
         double smallestWidth = 480; // Let's not get a smaller width than
@@ -83,6 +86,11 @@ public class OpenCVWorker implements Runnable {
             }
         }
 
+        System.out.println(mPreviewSize.width);
+        System.out.println(mPreviewSize.height);
+
+//        mCamera.set(Highgui.CV_CAP_PROP_FRAME_WIDTH, 800);
+//        mCamera.set(Highgui.CV_CAP_PROP_FRAME_HEIGHT, 480);
         mCamera.set(Highgui.CV_CAP_PROP_FRAME_WIDTH, mPreviewSize.width);
         mCamera.set(Highgui.CV_CAP_PROP_FRAME_HEIGHT, mPreviewSize.height);
     }
@@ -111,11 +119,17 @@ public class OpenCVWorker implements Runnable {
     public void run() {
         doProcess = true;
 
+        Log.e(TAG,"Setup Camera");
         setupCamera();
 
+        Log.e(TAG, "Initiate Matrices");
         initMatrices();
 
+        System.out.println(mCamera != null);
+        System.out.println(doProcess);
+        
         while (doProcess && mCamera != null) {
+
             boolean grabbed = mCamera.grab();
 
             if (grabbed) {
